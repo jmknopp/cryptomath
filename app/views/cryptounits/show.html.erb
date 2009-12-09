@@ -1,0 +1,8 @@
+<h1><%= @cryptounit.title %> Cryptounit</h1>
+Created <%= time_ago_in_words(@cryptounit.created_at) %> ago by <i>Mathematical Cryptology Crew<br/>
+<strong>Theme:</strong> <%= link_to @theme.name, theme_path(@theme) %><br/>
+<strong>Hours:</strong> <%= teaching_length(@cryptounit.teaching_length) %>
+
+<%= simple_format(@cryptounit.explanation) %>
+
+

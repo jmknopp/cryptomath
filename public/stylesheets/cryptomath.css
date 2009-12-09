@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family:Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  background: #EDEDED;
+  color: #333;
+}
+
+a, a:link {
+  color: #355A98;
+}
+
+#header {
+  background-color: #355A98;
+  color: #fff;
+  padding: 10px;
+  margin: 0;
+  border-bottom: 6px solid #ccc;
+}
+
+#main {
+  padding: 10px;
+}

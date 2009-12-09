@@ -1,0 +1,22 @@
+<h1><%= @theme.name %></h1>
+
+<%= simple_format(@theme.description) %>
+
+<h2>Certified <%= pluralize(@theme.cryptounits_count, 'cryptounit') %> related</h2>
+
+<h3>Certified by Mathematical Criptology Crew</h3>
+<ul>
+  <% @theme.cert_cryptounits.each do |crypto| %>
+    <li><%= link_to crypto.title, theme_cryptounit_path(@theme, crypto) %></li>
+  <% end %>
+</ul>
+
+<h3>Community</h3>
+
+<ul>
+  <% @theme.uncert_cryptounits.each do |crypto| %>
+    <li><%= link_to crypto.title, theme_cryptounit_path(@theme, crypto) %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Back to themes', themes_url %>

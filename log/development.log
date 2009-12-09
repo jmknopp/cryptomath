@@ -1,0 +1,1424 @@
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCryptounits (20091209183320)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "cryptounits" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255) NOT NULL, "explanation" text, "teaching_length" integer DEFAULT 0, "cert" boolean DEFAULT 'f', "theme_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091209183320')[0m
+Migrating to CreateThemes (20091209183630)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "themes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "description" text, "cryptounits_count" integer DEFAULT 0, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091209183630')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("cryptounits")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("themes")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCryptounits (20091209183320)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "cryptounits" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255) NOT NULL, "explanation" text, "teaching_length" integer DEFAULT 0, "cert" boolean DEFAULT 'f', "theme_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091209183320')[0m
+Migrating to CreateThemes (20091209183630)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "themes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "description" text, "cryptounits_count" integer DEFAULT 0, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091209183630')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("cryptounits")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("themes")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mDROP TABLE "cryptounits"[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE TABLE "cryptounits" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255) NOT NULL, "explanation" text, "teaching_length" integer DEFAULT 0, "cert" boolean DEFAULT 'f', "theme_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mDROP TABLE "themes"[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "themes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "description" text, "cryptounits_count" integer DEFAULT 0, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mTheme Load (0.2ms)[0m   [0mSELECT "themes".id FROM "themes" WHERE ("themes"."name" = 'Theme #01') LIMIT 1[0m
+  [4;36;1mTheme Create (0.4ms)[0m   [0;1mINSERT INTO "themes" ("name", "updated_at", "description", "cryptounits_count", "created_at") VALUES('Theme #01', '2009-12-09 18:47:36', 'Bla Bla Bla', 0, '2009-12-09 18:47:36')[0m
+  [4;35;1mTheme Load (0.2ms)[0m   [0mSELECT "themes".id FROM "themes" WHERE ("themes"."name" = 'Theme #02') LIMIT 1[0m
+  [4;36;1mTheme Create (0.3ms)[0m   [0;1mINSERT INTO "themes" ("name", "updated_at", "description", "cryptounits_count", "created_at") VALUES('Theme #02', '2009-12-09 18:47:36', 'Bla Bla Bla', 0, '2009-12-09 18:47:36')[0m
+  [4;35;1mTheme Load (0.2ms)[0m   [0mSELECT "themes".id FROM "themes" WHERE ("themes"."name" = 'Theme #03') LIMIT 1[0m
+  [4;36;1mTheme Create (0.3ms)[0m   [0;1mINSERT INTO "themes" ("name", "updated_at", "description", "cryptounits_count", "created_at") VALUES('Theme #03', '2009-12-09 18:47:36', 'Bla Bla Bla', 0, '2009-12-09 18:47:36')[0m
+  [4;35;1mTheme Load (0.2ms)[0m   [0mSELECT "themes".id FROM "themes" WHERE ("themes"."name" = 'Theme #04') LIMIT 1[0m
+  [4;36;1mTheme Create (0.3ms)[0m   [0;1mINSERT INTO "themes" ("name", "updated_at", "description", "cryptounits_count", "created_at") VALUES('Theme #04', '2009-12-09 18:47:36', 'Bla Bla Bla', 0, '2009-12-09 18:47:36')[0m
+  [4;35;1mTheme Load (0.2ms)[0m   [0mSELECT "themes".id FROM "themes" WHERE ("themes"."name" = 'Theme #05') LIMIT 1[0m
+  [4;36;1mTheme Create (0.3ms)[0m   [0;1mINSERT INTO "themes" ("name", "updated_at", "description", "cryptounits_count", "created_at") VALUES('Theme #05', '2009-12-09 18:47:36', 'Bla Bla Bla', 0, '2009-12-09 18:47:36')[0m
+  [4;35;1mTheme Load (0.2ms)[0m   [0mSELECT "themes".id FROM "themes" WHERE ("themes"."name" = 'Theme #06') LIMIT 1[0m
+  [4;36;1mTheme Create (0.3ms)[0m   [0;1mINSERT INTO "themes" ("name", "updated_at", "description", "cryptounits_count", "created_at") VALUES('Theme #06', '2009-12-09 18:47:36', 'Bla Bla Bla', 0, '2009-12-09 18:47:36')[0m
+  [4;35;1mTheme Load (0.2ms)[0m   [0mSELECT "themes".id FROM "themes" WHERE ("themes"."name" = 'Theme #07') LIMIT 1[0m
+  [4;36;1mTheme Create (0.3ms)[0m   [0;1mINSERT INTO "themes" ("name", "updated_at", "description", "cryptounits_count", "created_at") VALUES('Theme #07', '2009-12-09 18:47:36', 'Bla Bla Bla', 0, '2009-12-09 18:47:36')[0m
+  [4;35;1mTheme Load (0.4ms)[0m   [0mSELECT * FROM "themes" LIMIT 1[0m
+  [4;36;1mCryptounit Load (0.2ms)[0m   [0;1mSELECT "cryptounits".id FROM "cryptounits" WHERE ("cryptounits"."title" = 'RSA') LIMIT 1[0m
+  [4;35;1mCryptounit Create (0.4ms)[0m   [0mINSERT INTO "cryptounits" ("updated_at", "title", "explanation", "cert", "teaching_length", "theme_id", "created_at") VALUES('2009-12-09 18:47:36', 'RSA', 'RSA is...', 'f', 10, 1, '2009-12-09 18:47:36')[0m
+  [4;36;1mTheme Update (0.5ms)[0m   [0;1mUPDATE "themes" SET "cryptounits_count" = COALESCE("cryptounits_count", 0) + 1 WHERE ("id" = 1) [0m
+  [4;35;1mTheme Load (0.4ms)[0m   [0mSELECT * FROM "themes" ORDER BY themes.id DESC LIMIT 1[0m
+  [4;36;1mCryptounit Load (0.2ms)[0m   [0;1mSELECT "cryptounits".id FROM "cryptounits" WHERE ("cryptounits"."title" = 'Blowfish') LIMIT 1[0m
+  [4;35;1mCryptounit Create (0.4ms)[0m   [0mINSERT INTO "cryptounits" ("updated_at", "title", "explanation", "cert", "teaching_length", "theme_id", "created_at") VALUES('2009-12-09 18:47:36', 'Blowfish', 'Blowfish is...', 'f', 14, 7, '2009-12-09 18:47:36')[0m
+  [4;36;1mTheme Update (0.4ms)[0m   [0;1mUPDATE "themes" SET "cryptounits_count" = COALESCE("cryptounits_count", 0) + 1 WHERE ("id" = 7) [0m
+  [4;35;1mTheme Load (0.5ms)[0m   [0mSELECT * FROM "themes" ORDER BY themes.id DESC LIMIT 1[0m
+  [4;36;1mCryptounit Load (0.2ms)[0m   [0;1mSELECT "cryptounits".id FROM "cryptounits" WHERE ("cryptounits"."title" = 'Caesar') LIMIT 1[0m
+  [4;35;1mCryptounit Create (0.4ms)[0m   [0mINSERT INTO "cryptounits" ("updated_at", "title", "explanation", "cert", "teaching_length", "theme_id", "created_at") VALUES('2009-12-09 18:47:36', 'Caesar', 'Caesar is...', 't', 22, 7, '2009-12-09 18:47:36')[0m
+  [4;36;1mTheme Update (0.4ms)[0m   [0;1mUPDATE "themes" SET "cryptounits_count" = COALESCE("cryptounits_count", 0) + 1 WHERE ("id" = 7) [0m
+  [4;35;1mTheme Load (0.4ms)[0m   [0mSELECT * FROM "themes" LIMIT 1[0m
+  [4;36;1mCryptounit Load (0.2ms)[0m   [0;1mSELECT "cryptounits".id FROM "cryptounits" WHERE ("cryptounits"."title" = 'DES') LIMIT 1[0m
+  [4;35;1mCryptounit Create (0.4ms)[0m   [0mINSERT INTO "cryptounits" ("updated_at", "title", "explanation", "cert", "teaching_length", "theme_id", "created_at") VALUES('2009-12-09 18:47:36', 'DES', 'DES is...', 't', 87, 1, '2009-12-09 18:47:36')[0m
+  [4;36;1mTheme Update (0.4ms)[0m   [0;1mUPDATE "themes" SET "cryptounits_count" = COALESCE("cryptounits_count", 0) + 1 WHERE ("id" = 1) [0m
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT "themes".id FROM "themes" WHERE ("themes"."name" = 'Theme #01') LIMIT 1[0m
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT "themes".id FROM "themes" WHERE ("themes"."name" = 'Theme #02') LIMIT 1[0m
+  [4;36;1mTheme Load (0.2ms)[0m   [0;1mSELECT "themes".id FROM "themes" WHERE ("themes"."name" = 'Theme #03') LIMIT 1[0m
+  [4;35;1mTheme Load (0.2ms)[0m   [0mSELECT "themes".id FROM "themes" WHERE ("themes"."name" = 'Theme #04') LIMIT 1[0m
+  [4;36;1mTheme Load (0.2ms)[0m   [0;1mSELECT "themes".id FROM "themes" WHERE ("themes"."name" = 'Theme #05') LIMIT 1[0m
+  [4;35;1mTheme Load (0.2ms)[0m   [0mSELECT "themes".id FROM "themes" WHERE ("themes"."name" = 'Theme #06') LIMIT 1[0m
+  [4;36;1mTheme Load (0.2ms)[0m   [0;1mSELECT "themes".id FROM "themes" WHERE ("themes"."name" = 'Theme #07') LIMIT 1[0m
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" LIMIT 1[0m
+  [4;36;1mCryptounit Load (0.3ms)[0m   [0;1mSELECT "cryptounits".id FROM "cryptounits" WHERE ("cryptounits"."title" = 'RSA') LIMIT 1[0m
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" ORDER BY themes.id DESC LIMIT 1[0m
+  [4;36;1mCryptounit Load (0.2ms)[0m   [0;1mSELECT "cryptounits".id FROM "cryptounits" WHERE ("cryptounits"."title" = 'Blowfish') LIMIT 1[0m
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" ORDER BY themes.id DESC LIMIT 1[0m
+  [4;36;1mCryptounit Load (0.2ms)[0m   [0;1mSELECT "cryptounits".id FROM "cryptounits" WHERE ("cryptounits"."title" = 'Caesar') LIMIT 1[0m
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" LIMIT 1[0m
+  [4;36;1mCryptounit Load (0.3ms)[0m   [0;1mSELECT "cryptounits".id FROM "cryptounits" WHERE ("cryptounits"."title" = 'DES') LIMIT 1[0m
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:49:33) [GET]
+  [4;36;1mTheme Load (1.5ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering themes/index
+Completed in 86ms (View: 56, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:49:56) [GET]
+  [4;35;1mTheme Load (1.4ms)[0m   [0mSELECT * FROM "themes" [0m
+Rendering themes/index
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:50:22) [GET]
+  [4;36;1mTheme Load (1.5ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering themes/index
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:52:50) [GET]
+  [4;36;1mTheme Load (1.5ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering themes/index
+Completed in 43ms (View: 12, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:52:51) [GET]
+  [4;35;1mTheme Load (1.4ms)[0m   [0mSELECT * FROM "themes" [0m
+Rendering themes/index
+Completed in 13ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:52:51) [GET]
+  [4;36;1mTheme Load (1.4ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering themes/index
+Completed in 13ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:53:00) [GET]
+  [4;36;1mTheme Load (1.4ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering themes/index
+Completed in 42ms (View: 12, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:53:00) [GET]
+  [4;35;1mTheme Load (1.3ms)[0m   [0mSELECT * FROM "themes" [0m
+Rendering themes/index
+Completed in 13ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:53:17) [GET]
+  [4;36;1mTheme Load (1.4ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 51ms (View: 20, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-09 19:53:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:54:54) [GET]
+  [4;36;1mTheme Load (1.5ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 54ms (View: 21, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-09 19:54:54) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:54:54) [GET]
+  [4;35;1mTheme Load (1.4ms)[0m   [0mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-09 19:54:54) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:55:10) [GET]
+  [4;36;1mTheme Load (1.3ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-09 19:55:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:55:10) [GET]
+  [4;35;1mTheme Load (1.3ms)[0m   [0mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 17ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-09 19:55:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:55:55) [GET]
+  [4;36;1mTheme Load (1.4ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-09 19:55:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:56:36) [GET]
+  [4;35;1mTheme Load (1.3ms)[0m   [0mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 17ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-09 19:56:36) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:56:41) [GET]
+  [4;36;1mTheme Load (1.3ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 17ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-09 19:56:41) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:56:42) [GET]
+  [4;35;1mTheme Load (1.3ms)[0m   [0mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-09 19:56:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:57:15) [GET]
+  [4;36;1mTheme Load (1.3ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 15ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-09 19:57:15) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:57:25) [GET]
+  [4;35;1mTheme Load (1.3ms)[0m   [0mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 15ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-09 19:57:25) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:58:28) [GET]
+  [4;36;1mTheme Load (5.5ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 101ms (View: 80, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:58:29) [GET]
+  [4;35;1mTheme Load (1.3ms)[0m   [0mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:58:57) [GET]
+  [4;36;1mTheme Load (1.4ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:59:04) [GET]
+  [4;35;1mTheme Load (1.4ms)[0m   [0mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 15ms (View: 5, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:59:04) [GET]
+  [4;36;1mTheme Load (1.3ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 15ms (View: 5, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 19:59:04) [GET]
+  [4;35;1mTheme Load (1.3ms)[0m   [0mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 15ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:03:57) [GET]
+  [4;36;1mTheme Load (37.8ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 194ms (View: 80, DB: 38) | 200 OK [http://localhost/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:03:58) [GET]
+  [4;35;1mTheme Load (1.4ms)[0m   [0mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 77ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:04:22) [GET]
+  [4;36;1mTheme Load (1.3ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 25ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:04:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (1.0ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+Completed in 24ms (View: 8, DB: 1) | 200 OK [http://localhost/themes/1]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:04:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.9ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+
+ActionView::TemplateError (undefined local variable or method `theme' for #<ActionView::Base:0x248ed7c>) on line #1 of app/views/themes/show.html.erb:
+1: <h1><%= theme.name %></h1>
+
+    app/views/themes/show.html.erb:1
+
+Rendered rescues/_trace (58.8ms)
+Rendered rescues/_request_and_response (15.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:04:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.9ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+Completed in 25ms (View: 8, DB: 1) | 200 OK [http://localhost/themes/1]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:04:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.9ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+Completed in 24ms (View: 8, DB: 1) | 200 OK [http://localhost/themes/1]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:05:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (1.0ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+Completed in 24ms (View: 8, DB: 1) | 200 OK [http://localhost/themes/1]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:06:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (1.0ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+ERROR: compiling _run_erb_app47views47themes47show46html46erb RAISED compile error
+/Users/ishka/railera/cryptograph/app/views/themes/show.html.erb:8: syntax error, unexpected ')'
+...cryptounits.each do |crypto| ).to_s); @output_buffer.concat ...
+                              ^
+/Users/ishka/railera/cryptograph/app/views/themes/show.html.erb:12: syntax error, unexpected kENSURE, expecting ')'
+/Users/ishka/railera/cryptograph/app/views/themes/show.html.erb:14: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47themes47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>"; @output_buffer.concat(( @theme.name ).to_s); @output_buffer.concat "</h1>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat(( simple_format(@theme.description) ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<h2>"; @output_buffer.concat(( @theme.cryptounits_count ).to_s); @output_buffer.concat " Related Cryptounits</h2>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<ul>\n"
+@output_buffer.concat "  "; @output_buffer.concat(( @theme.cryptounits.each do |crypto| ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    <li>"; @output_buffer.concat(( crypto.title ).to_s); @output_buffer.concat "</li>\n"
+@output_buffer.concat "  ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "</ul>"; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/ishka/railera/cryptograph/app/views/themes/show.html.erb:14:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/ishka/railera/cryptograph/app/views/themes/show.html.erb:8: syntax error, unexpected ')'
+...cryptounits.each do |crypto| ).to_s); @output_buffer.concat ...
+                              ^
+/Users/ishka/railera/cryptograph/app/views/themes/show.html.erb:12: syntax error, unexpected kENSURE, expecting ')'
+/Users/ishka/railera/cryptograph/app/views/themes/show.html.erb:14: syntax error, unexpected kEND, expecting ')') on line #8 of app/views/themes/show.html.erb:
+5: <h2><%= @theme.cryptounits_count %> Related Cryptounits</h2>
+6: 
+7: <ul>
+8:   <%= @theme.cryptounits.each do |crypto| %>
+9:     <li><%= crypto.title %></li>
+10:   <% end %>
+11: </ul>
+
+    app/views/themes/show.html.erb:14:in `compile!'
+
+Rendered rescues/_trace (120.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:06:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.9ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+Completed in 25ms (View: 9, DB: 1) | 200 OK [http://localhost/themes/1]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:06:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.9ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+Completed in 20ms (View: 3, DB: 1) | 200 OK [http://localhost/themes/1]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:07:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.9ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+Completed in 24ms (View: 9, DB: 1) | 200 OK [http://localhost/themes/1]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:08:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.9ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+Completed in 24ms (View: 9, DB: 1) | 200 OK [http://localhost/themes/1]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:08:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.9ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+Completed in 24ms (View: 9, DB: 1) | 200 OK [http://localhost/themes/1]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:08:50) [GET]
+  [4;35;1mTheme Load (1.4ms)[0m   [0mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 87ms (View: 8, DB: 1) | 200 OK [http://localhost/themes]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:08:52) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;35;1mCryptounit Load (1.2ms)[0m   [0mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+Completed in 20ms (View: 4, DB: 2) | 200 OK [http://localhost/themes/7]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:08:54) [GET]
+  [4;36;1mTheme Load (1.3ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 17ms (View: 7, DB: 1) | 200 OK [http://localhost/themes]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:08:56) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mTheme Load (0.4ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;36;1mCryptounit Load (0.9ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+Completed in 20ms (View: 4, DB: 1) | 200 OK [http://localhost/themes/7]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:09:41) [GET]
+  Parameters: {"id"=>"7"}
+
+ArgumentError (Unknown key(s): class):
+  (eval):3:in `has_many'
+  app/models/theme.rb:3
+  app/controllers/themes_controller.rb:7:in `show'
+
+Rendered rescues/_trace (48.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:10:08) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+
+ActiveRecord::ConfigurationError (Association named 'cryptounits' was not found; perhaps you misspelled it?):
+  app/controllers/themes_controller.rb:7:in `show'
+
+Rendered rescues/_trace (132.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:10:24) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;35;1mCryptounit Load (0.9ms)[0m   [0mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+Completed in 26ms (View: 9, DB: 1) | 200 OK [http://localhost/themes/7]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:10:26) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mTheme Load (0.4ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;35;1mCryptounit Load (1.0ms)[0m   [0mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+Completed in 21ms (View: 3, DB: 1) | 200 OK [http://localhost/themes/7]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:10:26) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mTheme Load (0.5ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;35;1mCryptounit Load (1.0ms)[0m   [0mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+Completed in 23ms (View: 4, DB: 2) | 200 OK [http://localhost/themes/7]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:11:07) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;35;1mCryptounit Load (0.9ms)[0m   [0mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+Completed in 26ms (View: 10, DB: 1) | 200 OK [http://localhost/themes/7]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:11:20) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;35;1mCryptounit Load (0.9ms)[0m   [0mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;36;1mCryptounit Load (1.0ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 28ms (View: 10, DB: 2) | 200 OK [http://localhost/themes/7]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:11:50) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;36;1mCryptounit Load (0.9ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (1.0ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 29ms (View: 11, DB: 2) | 200 OK [http://localhost/themes/7]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:12:08) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;35;1mCryptounit Load (1.0ms)[0m   [0mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;36;1mCryptounit Load (1.0ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 28ms (View: 10, DB: 2) | 200 OK [http://localhost/themes/7]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:12:27) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mTheme Load (0.4ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;36;1mCryptounit Load (1.3ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (1.0ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 23ms (View: 4, DB: 3) | 200 OK [http://localhost/themes/7]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:12:44) [GET]
+  [4;36;1mTheme Load (1.3ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/themes/]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:12:46) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 2) [0m
+  [4;36;1mCryptounit Load (0.7ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 2 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (0.6ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 2 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 18ms (View: 4, DB: 2) | 200 OK [http://localhost/themes/2]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:12:47) [GET]
+  [4;36;1mTheme Load (1.4ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 19ms (View: 8, DB: 1) | 200 OK [http://localhost/themes/]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:12:49) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 3) [0m
+  [4;36;1mCryptounit Load (0.6ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 3 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (0.8ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 3 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 18ms (View: 4, DB: 2) | 200 OK [http://localhost/themes/3]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:12:50) [GET]
+  [4;36;1mTheme Load (1.5ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 92ms (View: 8, DB: 2) | 200 OK [http://localhost/themes/]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:13:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (1.0ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (0.9ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 23ms (View: 4, DB: 2) | 200 OK [http://localhost/themes/1]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:13:15) [GET]
+  [4;36;1mTheme Load (1.3ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 19ms (View: 8, DB: 1) | 200 OK [http://localhost/themes/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:13:25) [GET]
+  [4;35;1mTheme Load (1.3ms)[0m   [0mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 22ms (View: 12, DB: 1) | 200 OK [http://localhost/themes/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:13:31) [GET]
+  [4;36;1mTheme Load (1.5ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 23ms (View: 12, DB: 2) | 200 OK [http://localhost/themes/]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:13:37) [GET]
+  [4;35;1mTheme Load (1.4ms)[0m   [0mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 23ms (View: 12, DB: 1) | 200 OK [http://localhost/themes/]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:13:39) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 4) [0m
+  [4;35;1mCryptounit Load (0.7ms)[0m   [0mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 4 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;36;1mCryptounit Load (0.6ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 4 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 19ms (View: 4, DB: 2) | 200 OK [http://localhost/themes/4]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:16:29) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 4) [0m
+  [4;36;1mCryptounit Load (0.7ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 4 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (0.7ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 4 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 101ms (View: 86, DB: 2) | 200 OK [http://localhost/themes/4]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:16:30) [GET]
+  [4;36;1mTheme Load (1.4ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 19ms (View: 8, DB: 1) | 200 OK [http://localhost/themes]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:16:32) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;36;1mCryptounit Load (0.9ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (1.0ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 23ms (View: 5, DB: 2) | 200 OK [http://localhost/themes/7]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:16:33) [GET]
+  [4;36;1mTheme Load (1.3ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/themes]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:16:34) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mTheme Load (0.4ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 4) [0m
+  [4;36;1mCryptounit Load (0.6ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 4 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (0.6ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 4 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 19ms (View: 4, DB: 2) | 200 OK [http://localhost/themes/4]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:16:35) [GET]
+  [4;36;1mTheme Load (1.3ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 19ms (View: 8, DB: 1) | 200 OK [http://localhost/themes]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:19:03) [GET]
+  [4;36;1mTheme Load (11.1ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 254ms (View: 157, DB: 11) | 200 OK [http://localhost/themes]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:19:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.5ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (1.0ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (1.2ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 88ms (View: 11, DB: 3) | 200 OK [http://localhost/themes/1]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:19:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTheme Load (0.4ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;35;1mCryptounit Load (0.9ms)[0m   [0mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;36;1mCryptounit Load (1.0ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 31ms (View: 11, DB: 2) | 200 OK [http://localhost/themes/1]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:19:39) [GET]
+  Parameters: {"id"=>"4", "theme_id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+
+NoMethodError (undefined method `find' for #<Theme:0x249ffc8>):
+  app/controllers/cryptounits_controller.rb:4:in `show'
+
+Rendered rescues/_trace (44.9ms)
+Rendered rescues/_request_and_response (2.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:20:05) [GET]
+  Parameters: {"id"=>"4", "theme_id"=>"1"}
+  [4;36;1mTheme Load (0.4ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+
+NoMethodError (undefined method `cryptounits' for #<Theme:0x239b1f4>):
+  app/controllers/cryptounits_controller.rb:4:in `show'
+
+Rendered rescues/_trace (121.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:20:35) [GET]
+  Parameters: {"id"=>"4", "theme_id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.4ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 4 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 27ms (View: 12, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/4]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:20:56) [GET]
+  Parameters: {"id"=>"4", "theme_id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.4ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 4 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 23ms (View: 9, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/4]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:22:21) [GET]
+  Parameters: {"id"=>"4", "theme_id"=>"1"}
+  [4;35;1mTheme Load (0.4ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.4ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 4 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 24ms (View: 9, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/4]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:22:39) [GET]
+  Parameters: {"id"=>"4", "theme_id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.4ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 4 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 25ms (View: 10, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/4]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:22:45) [GET]
+  Parameters: {"id"=>"4", "theme_id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.4ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 4 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 94ms (View: 80, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/4]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:23:05) [GET]
+  Parameters: {"id"=>"4", "theme_id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.4ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 4 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 179ms (View: 164, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/4]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:23:10) [GET]
+  Parameters: {"id"=>"4", "theme_id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.4ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 4 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 23ms (View: 9, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/4]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:23:32) [GET]
+  Parameters: {"id"=>"4", "theme_id"=>"1"}
+  [4;35;1mTheme Load (0.4ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.5ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 4 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 27ms (View: 10, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/4]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:24:27) [GET]
+  Parameters: {"id"=>"4", "theme_id"=>"1"}
+  [4;35;1mTheme Load (4.7ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.4ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 4 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 31ms (View: 12, DB: 5) | 200 OK [http://localhost/themes/1/cryptounits/4]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:24:45) [GET]
+  Parameters: {"id"=>"4", "theme_id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.4ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 4 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 27ms (View: 13, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/4]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:24:55) [GET]
+  Parameters: {"id"=>"4", "theme_id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.4ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 4 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 26ms (View: 12, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/4]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:25:08) [GET]
+  Parameters: {"id"=>"4", "theme_id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.4ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 4 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 27ms (View: 13, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/4]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:25:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (1.1ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (0.9ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 26ms (View: 6, DB: 2) | 200 OK [http://localhost/themes/1]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:25:12) [GET]
+  Parameters: {"id"=>"1", "theme_id"=>"1"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;35;1mCryptounit Load (0.4ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 1 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 22ms (View: 7, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/1]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:27:07) [GET]
+  Parameters: {"id"=>"1", "theme_id"=>"1"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;35;1mCryptounit Load (0.4ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 1 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 29ms (View: 14, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/1]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:27:12) [GET]
+  Parameters: {"id"=>"1", "theme_id"=>"1"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;35;1mCryptounit Load (0.4ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 1 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 28ms (View: 13, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/1]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:27:25) [GET]
+  Parameters: {"id"=>"1", "theme_id"=>"1"}
+  [4;36;1mTheme Load (0.4ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;35;1mCryptounit Load (0.4ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 1 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 28ms (View: 13, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/1]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:27:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;35;1mCryptounit Load (1.0ms)[0m   [0mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;36;1mCryptounit Load (0.9ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 24ms (View: 6, DB: 2) | 200 OK [http://localhost/themes/1]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:27:28) [GET]
+  [4;35;1mTheme Load (1.3ms)[0m   [0mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://localhost/themes]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:27:29) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 6) [0m
+  [4;35;1mCryptounit Load (0.9ms)[0m   [0mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 6 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;36;1mCryptounit Load (0.6ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 6 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 20ms (View: 5, DB: 2) | 200 OK [http://localhost/themes/6]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:27:30) [GET]
+  [4;35;1mTheme Load (1.4ms)[0m   [0mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 20ms (View: 8, DB: 1) | 200 OK [http://localhost/themes]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:27:31) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;35;1mCryptounit Load (0.9ms)[0m   [0mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;36;1mCryptounit Load (1.0ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 24ms (View: 6, DB: 2) | 200 OK [http://localhost/themes/7]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:27:33) [GET]
+  Parameters: {"id"=>"2", "theme_id"=>"7"}
+  [4;35;1mTheme Load (0.4ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;36;1mCryptounit Load (0.4ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 2 AND ("cryptounits".theme_id = 7)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 23ms (View: 9, DB: 1) | 200 OK [http://localhost/themes/7/cryptounits/2]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:27:34) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mTheme Load (0.5ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;36;1mCryptounit Load (0.9ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (0.9ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 7 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 24ms (View: 6, DB: 2) | 200 OK [http://localhost/themes/7]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:27:35) [GET]
+  Parameters: {"id"=>"3", "theme_id"=>"7"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;35;1mCryptounit Load (0.4ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 3 AND ("cryptounits".theme_id = 7)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 22ms (View: 9, DB: 1) | 200 OK [http://localhost/themes/7/cryptounits/3]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:27:45) [GET]
+  Parameters: {"id"=>"3", "theme_id"=>"7"}
+  [4;36;1mTheme Load (0.4ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;35;1mCryptounit Load (0.4ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 3 AND ("cryptounits".theme_id = 7)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 28ms (View: 14, DB: 1) | 200 OK [http://localhost/themes/7/cryptounits/3]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:27:51) [GET]
+  Parameters: {"id"=>"3", "theme_id"=>"7"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;35;1mCryptounit Load (0.4ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 3 AND ("cryptounits".theme_id = 7)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 28ms (View: 14, DB: 1) | 200 OK [http://localhost/themes/7/cryptounits/3]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:27:54) [GET]
+  Parameters: {"id"=>"3", "theme_id"=>"7"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;35;1mCryptounit Load (0.4ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 3 AND ("cryptounits".theme_id = 7)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 29ms (View: 14, DB: 1) | 200 OK [http://localhost/themes/7/cryptounits/3]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:28:00) [GET]
+  Parameters: {"id"=>"3", "theme_id"=>"7"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;35;1mCryptounit Load (0.4ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 3 AND ("cryptounits".theme_id = 7)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 28ms (View: 13, DB: 1) | 200 OK [http://localhost/themes/7/cryptounits/3]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:28:08) [GET]
+  Parameters: {"id"=>"3", "theme_id"=>"7"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;35;1mCryptounit Load (0.4ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 3 AND ("cryptounits".theme_id = 7)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 27ms (View: 13, DB: 1) | 200 OK [http://localhost/themes/7/cryptounits/3]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:28:28) [GET]
+  Parameters: {"id"=>"3", "theme_id"=>"7"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 7) [0m
+  [4;35;1mCryptounit Load (0.4ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 3 AND ("cryptounits".theme_id = 7)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 28ms (View: 13, DB: 1) | 200 OK [http://localhost/themes/7/cryptounits/3]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:30:10) [GET]
+  [4;36;1mTheme Load (1.4ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 19ms (View: 7, DB: 1) | 200 OK [http://localhost/themes/]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:30:14) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mTheme Load (0.4ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 5) [0m
+  [4;36;1mCryptounit Load (0.7ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 5 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (0.7ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 5 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 21ms (View: 5, DB: 2) | 200 OK [http://localhost/themes/5]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:30:15) [GET]
+  [4;36;1mTheme Load (1.3ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 19ms (View: 8, DB: 1) | 200 OK [http://localhost/themes/]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:30:16) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 6) [0m
+  [4;36;1mCryptounit Load (0.7ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 6 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (0.6ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 6 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 19ms (View: 4, DB: 2) | 200 OK [http://localhost/themes/6]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:30:18) [GET]
+  [4;36;1mTheme Load (1.3ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/themes]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:30:19) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 4) [0m
+  [4;36;1mCryptounit Load (0.7ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 4 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (0.6ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 4 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 19ms (View: 4, DB: 2) | 200 OK [http://localhost/themes/4]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:30:20) [GET]
+  [4;36;1mTheme Load (1.4ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/themes]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:30:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.9ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (0.9ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 24ms (View: 5, DB: 2) | 200 OK [http://localhost/themes/1]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:30:23) [GET]
+  Parameters: {"id"=>"1", "theme_id"=>"1"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;35;1mCryptounit Load (0.4ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 1 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 23ms (View: 9, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/1]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:33:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;35;1mCryptounit Load (0.9ms)[0m   [0mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;36;1mCryptounit Load (0.9ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 24ms (View: 6, DB: 2) | 200 OK [http://localhost/themes/1]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:33:21) [GET]
+  Parameters: {"id"=>"1", "theme_id"=>"1"}
+  [4;35;1mTheme Load (0.4ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.5ms)[0m   [0;1mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 1 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 26ms (View: 9, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/1]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:33:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.9ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (0.9ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 25ms (View: 6, DB: 2) | 200 OK [http://localhost/themes/1]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:33:29) [GET]
+  Parameters: {"id"=>"1", "theme_id"=>"1"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;35;1mCryptounit Load (0.4ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 1 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 23ms (View: 9, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/1]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:36:18) [GET]
+  [4;36;1mTheme Load (16.5ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 34ms (View: 7, DB: 17) | 200 OK [http://localhost/themes/]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:36:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (1.2ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (0.9ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 24ms (View: 6, DB: 2) | 200 OK [http://localhost/themes/1]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:36:33) [GET]
+  [4;36;1mTheme Load (1.6ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 19ms (View: 7, DB: 2) | 200 OK [http://localhost/themes/]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:36:34) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 4) [0m
+  [4;36;1mCryptounit Load (0.7ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 4 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (0.6ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 4 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 19ms (View: 4, DB: 2) | 200 OK [http://localhost/themes/4]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:36:58) [GET]
+  [4;36;1mTheme Load (1.3ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 19ms (View: 8, DB: 1) | 200 OK [http://localhost/themes]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:37:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.9ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (0.9ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 101ms (View: 6, DB: 2) | 200 OK [http://localhost/themes/1]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:37:22) [GET]
+  Parameters: {"id"=>"4", "theme_id"=>"1"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;35;1mCryptounit Load (0.4ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 4 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 24ms (View: 9, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/4]
+
+
+Processing ThemesController#index (for 127.0.0.1 at 2009-12-09 20:38:54) [GET]
+  [4;36;1mTheme Load (1.3ms)[0m   [0;1mSELECT * FROM "themes" [0m
+Rendering template within layouts/application
+Rendering themes/index
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/themes/]
+
+
+Processing ThemesController#show (for 127.0.0.1 at 2009-12-09 20:38:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTheme Load (0.3ms)[0m   [0mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;36;1mCryptounit Load (0.9ms)[0m   [0;1mSELECT "cryptounits".* FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 't')) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering themes/show
+  [4;35;1mCryptounit Load (0.9ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits".theme_id = 1 AND ("cryptounits"."cert" = 'f')) ORDER BY title ASC[0m
+Completed in 23ms (View: 5, DB: 2) | 200 OK [http://localhost/themes/1]
+
+
+Processing CryptounitsController#show (for 127.0.0.1 at 2009-12-09 20:39:12) [GET]
+  Parameters: {"id"=>"4", "theme_id"=>"1"}
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM "themes" WHERE ("themes"."id" = 1) [0m
+  [4;35;1mCryptounit Load (0.4ms)[0m   [0mSELECT * FROM "cryptounits" WHERE ("cryptounits"."id" = 4 AND ("cryptounits".theme_id = 1)) ORDER BY title ASC[0m
+Rendering template within layouts/application
+Rendering cryptounits/show
+Completed in 22ms (View: 8, DB: 1) | 200 OK [http://localhost/themes/1/cryptounits/4]

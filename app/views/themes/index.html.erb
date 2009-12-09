@@ -1,0 +1,8 @@
+<h1>Cryptology Themes</h1>
+
+<ul>
+<% @themes.each do |theme| %>
+  <li><strong><%= link_to theme.name, theme_path(theme) %></strong> <i>(<%= theme.cryptounits_count %> cryptounits)</i> </li>
+<% end %>
+</ul>
+

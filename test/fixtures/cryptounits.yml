@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  explanation: MyText
+  teaching_length: 1
+  cert: false
+
+two:
+  title: MyString
+  explanation: MyText
+  teaching_length: 1
+  cert: false
